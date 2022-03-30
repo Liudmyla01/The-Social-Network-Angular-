@@ -1,0 +1,64 @@
+<!-- <div class="userProfile">
+    <h1>Hello, dd!</h1>
+    <p>Edit or review your information</p>
+    <img src="../../../assets/ava.jpeg" alt="avatar">
+    <div class="userProfile-details">
+        <div class="name">
+            <span>Full name</span> 
+            <span>JJJ DDD</span>
+        </div>
+        <div class="email">
+            <span>Email</span> 
+            <span>JJJ DDD</span>
+        </div>
+        <button>Edit </button>
+        <button id="btn">Change password</button>
+    </div>
+</div> -->
+<div class="container"  >
+    <div class="hello">
+        <h1>Hello, {{user.firstName}} </h1>
+    </div>
+    <p class="rev"> Edit or review your information </p>
+    <img src="../../../assets/ava.jpeg" class="img">
+    <div [ngClass]="{
+        contact: show,
+        hide:!show
+    }">
+      <p class="fulln">Full name</p>
+      <p class="name">{{user.firstName}} {{user.lastName}}</p>
+      <p class="email">Email</p>
+      <p class="mail">{{user.email}}</p>
+    </div>
+    <div  [ngClass]="{
+        div1: show,
+        hide:!show
+    }">
+        <div class="divbtn">
+            <button class="btn1" (click)="toggle()"><span>Edit  </span> <img src="../../../assets/pencil.svg"></button>
+            <button class="btn2">Change password </button>
+        </div>
+    </div>
+    <div  [ngClass]="{
+        editProf: !show,
+        hide:show
+
+    }">
+        <div class="inputName">
+            <p>Full Name</p>
+            <input type="text">
+        </div>
+        <div class="inputEmail">
+            <p>Email</p>
+            <input type="text" name="" id="">
+        </div>
+        <div class="sub-btn">
+            <div class="cancel">
+                <button (click)="toggle()">Cancel</button>
+            </div>
+            <div class="save">
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+  </div>

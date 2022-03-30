@@ -1,0 +1,30 @@
+@import '../../style/mixin.scss';
+@import '../../style/variables.scss';
+
+
+.footer-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    .info{
+        display: flex;
+        flex-direction: row;
+        margin-left: 40px; 
+    }
+    .list{
+        display: flex;
+        margin: 0px 40px;
+        justify-content: space-between;
+        width: 150px;
+        height: auto;
+        align-items: center;
+        @include font(Roboto,normal,bold,16px,19px,$mainColorText);
+    }
+    .rights{
+        @include font(Inter,normal,normal,12px,150%,$fColor); 
+        margin-right: 40px;
+    }
+}
+

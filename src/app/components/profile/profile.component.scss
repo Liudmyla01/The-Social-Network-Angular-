@@ -1,0 +1,173 @@
+@import '../../style/variables.scss';
+@import '../../style/mixin.scss';
+
+:host{
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+.container {  
+
+    background-color: $light;
+    width: 952px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 50px 1fr 80px 1fr 2fr;
+    gap: 4px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "hello"
+      "rev"
+      "img"
+      "contact"
+      'div1'
+  }
+  
+  .hello {
+    justify-self: center;
+    align-self: end;
+    grid-area: hello;
+  }
+  
+  .rev {
+    justify-self: center;
+    align-self: flex-start;
+    grid-area: rev;
+  }
+  
+  .img {
+    justify-self: center;
+    grid-area: img;
+    @include size(140px,140px);
+    border-radius: 100%;
+  }
+  
+  .contact {  
+    // display: none;
+    display: grid;
+    align-self:flex-end;
+    grid-template-columns: 90px 130px;
+    grid-template-rows: 30px 30px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "fulln name"
+      "email mail";
+    grid-area: contact;
+    justify-content: center;
+    align-content: center;
+  }
+  
+  .fulln {
+    // justify-self: end;
+    align-self: stretch;
+    grid-area: fulln;
+  }
+  
+  .name { grid-area: name; }
+  
+  .email {
+    // justify-self: end;
+    align-self: stretch;
+    grid-area: email;
+  }
+  
+  .mail { grid-area: mail; }
+  
+  button{
+      height: 32px;
+      background: #3366ff;
+      border-radius: 4px;
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      text-align: center;
+      color: #ffffff;
+}
+.div1 {
+    // display: none;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr 1fr 1fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+      "divbtn"
+      "divbtn";
+      //   "."; 
+      grid-area: div1; 
+  
+    .divbtn {
+      display: grid; 
+      grid-template-columns: 1fr; 
+      grid-template-rows: 1fr 1fr; 
+      gap: 0px 0px; 
+      grid-template-areas: 
+        "btn1"
+        "btn2"; 
+      grid-area: divbtn; 
+    }
+    .btn2 { 
+      grid-area: btn2; 
+      justify-self: center;
+      align-self: flex-end;
+      width: 300px;
+    }
+    .btn1 { 
+      grid-area: btn1; 
+      justify-self: center;
+      width: 90px;
+    }
+}
+
+
+.editProf {
+
+ display: grid; 
+ grid-template-columns: 1fr; 
+ grid-template-rows: 1fr 1fr 1fr; 
+ gap: 30px 0px; 
+ grid-template-areas: 
+   " input1"
+   "input2"
+   "btn22"; 
+ grid-area: contact; 
+ p{
+     @include font(Inter,normal,normal,10px,120%,$descripColor,start)
+ }
+ input{
+     height: 34px;
+    width: 300px;
+    border: 1px solid #C4C4C4;
+    border-radius: 4px;
+ }
+ button{
+     @include size(79px,32px)
+ }
+ .inputName { 
+    justify-self: center;
+     grid-area: input1; 
+    }
+.inputEmail { 
+    grid-area: input2;
+    justify-self: center;
+ }
+ .sub-btn {  
+    justify-self: center;
+     display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 20px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "c s";
+    grid-area: btn22;
+  } 
+  
+  .cancel { grid-area: c; }
+  
+  .save { grid-area: s; }
+  
+}
+.hide{
+  display: none;
+}

@@ -1,0 +1,51 @@
+@import '../../style/variables.scss';
+@import '../../style/mixin.scss';
+
+
+.signUpExpert{
+    
+    width: 952px;
+    height: auto;
+    margin-left: 100px;
+    margin-top: 120px;
+    padding: 60px 0px;
+    background-color: $light;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    h2{
+        @include font(Inter,normal,bold,32px,44px,$mainColorText)
+    }
+    p{
+        @include font(Inter,normal,normal,16px,150%,#555770)
+    }
+.signUpForm{
+    display: flex;
+    flex-direction: column;
+    label{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        margin-top:30px
+    }
+    p{
+        @include font(Inter,normal,normal,10px,120%,$descripColor)
+    }
+    input{
+        @include size(300px, 34px);
+     
+        background: $light;
+        border: 1px solid #C4C4C4;
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+}
+button{
+    @include size(174px,34px);
+    @include font(Inter,normal,bold,14px,24px,$light);
+    margin-top: 30px;
+    background: #3366FF;
+    border-radius: 4px;
+}
+}

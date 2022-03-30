@@ -1,0 +1,55 @@
+@import "../../style/mixin.scss";
+@import "../../style/variables.scss";
+
+.headerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    padding: 16px 41px;
+    .logo-content {
+        display: flex;
+    }
+    img {
+        @include size(25.16px, 28px);
+    }
+    a {
+        padding-left: 11px;
+        @include font(Roboto, normal, bold, 22px, 26px, $mainColorText);
+    }
+}
+
+.list {
+    display: flex;
+    align-items: center;
+    margin: 0 40px 0 0;
+    li {
+        margin-right: 40px;
+        a {
+            color: $mainColorText;
+        }
+    }
+    #search, #favorit, #about {
+        @include font(Roboto, normal, bold, 16px, 19px, $mainColorText);
+    }
+    #log {
+        @include size(72px, 32px);
+        @include btn(2px, $mainColor, 4px,0,0);
+        justify-content: center;
+        background-color: $light;
+        a {
+            @include font(Inter, normal, 500, 14px, 24px, $mainColor);
+        }
+    }
+    #sign {
+        @include btn(0, 0, 4px, 0px 0px);
+        @include size(84px, 32px);
+        justify-content: center;
+        background-color: $mainColor;
+        margin-left: 20px;
+        a {
+            @include font(Inter, normal, bold, 14px, 24px, $light);
+        }
+    }
+}

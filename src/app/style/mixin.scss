@@ -1,0 +1,33 @@
+@mixin font (
+    $name, $style,$weight,$size,$height,$color,$align:center
+){
+font-family:$name;
+font-style: $style;
+font-weight: $weight;
+font-size: $size;
+line-height: $height;
+text-align: $align;
+color: $color
+}
+
+@mixin size($w,$h){
+    width: $w;
+    height:$h;
+}
+
+@mixin btn($border,$color,$radius, $pad...) {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: $pad;
+    border: $border solid $color;
+    box-sizing: border-box;
+    border-radius: $radius;
+}
+@mixin position($posi,$l,$r,$t,$b) {
+position: $posi;
+left: $l;
+right: $r;
+top: $t;
+bottom: $b;
+}

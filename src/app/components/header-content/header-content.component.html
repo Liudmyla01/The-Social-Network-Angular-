@@ -1,0 +1,27 @@
+<div class="headerContent">
+    <div class="logo">
+        <div class="logo-content">
+            <img src="../assets/brain.svg" alt="brain">
+            <a routerLink="popular">MASTERMINDS</a>
+        </div>
+    </div>
+    <div class="pages">
+        <ul class="list" >
+            <li *ngIf=" user$ | async " id="favorit"><a routerLink="favorites">Favorites</a> </li>
+            <li routerLink="search" id='search' >Search</li>
+            <li id='about'>About us</li>
+            <button id="log" (click)="modal = true && type =='logIn'"><a>Log in</a> </button>
+            <button id="sign"(click)="modal = true && type == 'signUp'"  ><a>Sign up</a> </button>   
+        </ul>
+    </div>
+</div>
+        <app-modal
+                *ngIf="modal && type === 'logIn'"
+                (close)="modal = false"
+                title="Log in"
+        ></app-modal>
+        <app-modal
+        *ngIf="modal && type === 'signUp'"
+        (close)="modal = false"
+        title="Sign up"
+        ></app-modal>

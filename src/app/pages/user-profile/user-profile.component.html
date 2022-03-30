@@ -1,0 +1,7 @@
+<div *ngIf="userData$ | async  as user; else loading">
+    <profile [user]="user"></profile>
+</div>
+
+<ng-template #loading> 
+    <div>Loading ...</div>
+ </ng-template> 

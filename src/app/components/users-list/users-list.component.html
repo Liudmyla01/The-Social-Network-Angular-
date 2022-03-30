@@ -1,0 +1,14 @@
+
+
+<ng-container *ngIf=" usersList$ | async else loading">
+    <ul class="users-list">
+        <li class="user-card" *ngFor="let users of usersList$ | async  ">
+                <user-card type="medium" [user]="users"></user-card>
+        </li>
+    </ul> 
+  </ng-container>
+  
+  
+    <ng-template #loading> 
+      <h3>Loading ...</h3>
+   </ng-template> 

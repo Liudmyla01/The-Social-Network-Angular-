@@ -1,0 +1,48 @@
+<div >
+
+  <div class="backdrop"></div>
+  
+  <div class="modal">
+    <button class="btn" (click)="close.emit()"><img src="../../../assets/cross.svg" alt=""></button>
+    <div class="loginPage">
+      <h2>{{title}}</h2>
+      <p>{{complete}}</p>
+      <p *ngIf="type === 'signUp'">To sign up as an expert click<a [routerLink]="'mentor/signUp'" style="color: #3366FF; text-decoration: underline;" (click)="close.emit()"> here</a></p>
+      <form class="enterInput">
+          <label *ngIf="type === 'signUp'" >
+            <span>First name</span>
+            <input inputStyle [(ngModel)]='signInForm.firstName' name="firstName" type="text">
+         </label>
+        <label *ngIf="type === 'signUp'">
+            <span>Last name</span>
+            <input inputStyle [(ngModel)]='signInForm.lastName' name="lastName" type="text">
+        </label>
+        <label>
+            <span>Email</span>
+            <input inputStyle [(ngModel)]='loginName' [(ngModel)]='signInForm.email'  name="email" type="text">
+        </label>
+        <label for="" *ngIf="type === 'logIn'">
+          <span>Password</span>
+          <input inputStyle [(ngModel)]='loginPassword' name="password" type="text" > 
+        </label>
+        <label *ngIf="type === 'signUp'">
+            <span>Create password</span>
+            <input inputStyle [(ngModel)]='signInForm.password' name="password" type="text">
+        </label>
+        <label *ngIf="type === 'signUp'">
+            <span>Confirm password</span>
+            <input inputStyle [(ngModel)]='signInForm.confirmPassword' name="confirmPassword" type="text">
+        </label>
+      </form>
+<div *ngIf="type === 'logIn'" class="subGroup">
+  <button type="button" (click)='submitLogIn()'(click)="close.emit()">Sign in</button>
+   <p>Don’t have an account? <span (click)="signUpText()">Sign up</span> </p>
+    </div>
+<div *ngIf="type === 'signUp'" class="subGroup">
+  <button type="button" (click)='submitSignUp()' (click)="close.emit()">Create an account</button>
+  <p>Already have an account?  <span (click)="loginText()">Log in</span> </p>
+</div>
+  </div>
+  
+  </div>
+</div>

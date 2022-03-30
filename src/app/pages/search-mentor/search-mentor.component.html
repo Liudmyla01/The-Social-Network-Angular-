@@ -1,0 +1,52 @@
+<h1>Search</h1>
+<div class="container">
+        <input class="inputName" type="text" [formControl]="searchControl$">
+        <button class="searchBtn">Search</button>
+    <div class="professionInp">
+        <p>Profession</p>
+        <input type="text" placeholder="Search...">
+    </div>
+    <div class="aspectsInp">
+        <p>Life asspects</p>
+        <input type="text" placeholder="Search...">
+        <!-- <select id="cities" >
+          <option></option>
+          <option value="Naples">Naples</option>
+          <option value="London">London</option>
+          <option value="Berlin">Berlin</option>
+          <option value="New York">New York</option>
+          <option value="Frattamaggiore">Frattamaggiore</option>
+       </select> -->
+    </div>
+    <div class="rating">
+        <p>Min rating</p>
+        <button>s</button>
+        <input type="text" [formControl]="rateControl$">
+    </div>
+    <div class="maxRate">
+        <p>Max hourly rate</p>
+        <button>s</button>
+        <input type="text">
+    </div>
+    <div class="choice">
+        <button>Mental health</button>
+        <button>Mental health</button>
+        <button>Mental health</button>
+    </div>
+  </div>
+
+  <users-list  [usersList$]="users$"></users-list>
+
+
+<nav class="pagination" >
+  <ul class="pages" >
+    <li class="page-item"   *ngFor="let page of pagination$ | async" (click)='setActivePage(page)'>
+      <a class="page-link" >{{page}}</a>
+    </li>
+  </ul>
+</nav>
+
+
+<ng-template #loading> 
+  <h3>Loading ...</h3>
+</ng-template> 

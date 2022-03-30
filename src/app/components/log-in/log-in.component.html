@@ -1,0 +1,12 @@
+<div class="loginPage">
+    <h2>Log in</h2>
+    <p>Complete the form to access your account</p>
+    <div class="enterInput">
+        <p>Full name or email</p>
+        <input inputStyle type="text" [(ngModel)]='loginName'>
+        <p>Password</p>
+        <input inputStyle type="text" [(ngModel)]='loginPassword'>
+    </div>
+    <button type="button" (click)='submitSignIn()'>Sign in</button>
+    <p>Don’t have an account? Sign up</p>
+</div>

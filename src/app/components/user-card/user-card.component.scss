@@ -1,0 +1,147 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css");
+@import '../../style/variables.scss';
+@import '../../style/mixin.scss';
+
+.learn-more {
+    width: 108px;
+    height: 32px;
+    background: #3366ff;
+    border-radius: 4px;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 19px;
+}
+.mediumCard {
+    @include size(200px,250px);
+    background: $light;
+    box-shadow: 0px 1px 4px rgba(64, 64, 64, 0.1);
+    border-radius: 4px;
+    padding: 20px 25px;
+    margin-left: 100px;
+    text-align: center;
+
+    img {
+        @include size(80px,80px);
+        border-radius: 100px;
+    }
+    .fullName {
+        @include font(Inter,normal,bold,18px,26px,$mainColorText);
+        
+    }
+    .profession {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #9ca3af;
+    }
+    a {
+        text-decoration: none;
+        color: #ffffff;
+    }
+}
+.star{
+    i{
+        margin: 3px;
+        color: $star;
+        &:nth-last-child(-n+2){
+            color: silver;
+        }
+    }
+    }
+
+.largeCard{
+        @include size(200px,250px);
+        background: $light;
+        box-shadow: none;
+        display: flex;
+        width: 952px;
+        height: auto;
+        grid-gap: 60px;
+        border-radius: 4px;
+        padding: 60px;
+        margin-top: 60px;
+        margin-left: 100px;
+        justify-content: center;
+        .user-card{
+            width: 50%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        
+        & img {
+            @include size(140px,140px);
+            border-radius: 100px;
+        }
+        .fullName{
+            @include font(Inter,normal,700,18px,36px,$mainColorText)
+        }
+        .profession{
+            @include font(Inter,normal,500,14px,18px,$descripColor)
+        }
+        .rate{
+            @include font(Inter,normal,700,12px,14px,$mainColor)
+        }
+        .countReviews{
+            @include font(Inter,normal,500,12px,14px,$descripColor)
+        }
+        .contactBtn{
+            display: flex;
+            flex-direction: column;
+         
+        }
+    }
+    .aspects{
+        display: flex;
+        margin-top: 20px;
+      
+        button{
+          
+          @include size(124px,30px);
+          @include font(Inter,normal,500,14px,24px,$mainColor);
+          border: 2px solid $mainColor;
+          box-sizing: border-box;
+         border-radius: 50px;
+         background-color: $light;
+         margin-right: 20px;
+      }
+    }
+    .userProfile-description, .userProfile-reviews{
+        margin-top: 30px;
+        p{
+            color: $descripColor;
+        }
+    }
+    .reviews{
+        padding-right: 51px;
+        & >p{
+            float: right;
+            text-decoration: underline;
+            color: $mainColor;
+        }
+    }
+    .autorReview{
+        display: flex;
+        margin-top: 34px;
+        img{
+            @include size(60px,60px);
+            border-radius: 100px;
+        }
+        .comment{
+            padding-left: 20px;
+            width: 100%;
+            .star{
+                float: right;
+            }
+            p{
+                margin-top: 20px;
+            }
+        }
+    }
+   
+}

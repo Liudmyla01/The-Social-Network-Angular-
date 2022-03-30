@@ -1,0 +1,33 @@
+.userInfo{
+width: 952px;
+background: #FFFFFF;
+border-radius: 4px;
+margin: 68px 100px;
+display: grid;
+grid-template-areas:
+    'user   content';
+  grid-template-columns: 0.5fr 1fr;
+  grid-gap: 2rem;
+
+  .userProfile{
+    grid-area: 'content';
+  }
+}
+.userCard{
+grid-area: 'user';
+background-color:azure
+}
+img{
+  margin: 0 auto;
+  width: 80px;
+  height: 80px;
+  border-radius: 100px;
+}
+.s{
+  width: auto;
+  height: auto;
+  box-shadow: none;
+  border-radius:none;
+  padding: 0px;
+  margin: 0;
+}

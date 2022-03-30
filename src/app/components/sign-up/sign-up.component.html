@@ -1,0 +1,57 @@
+<div class="signUpExpert">
+    <ng-container *ngIf="!step; else addInfo">
+        <h2>Sign up as an expert</h2>
+        <p>Complete the form to create your accountv</p>
+    </ng-container>
+   <ng-template #addInfo>
+    <h2>Describe your expertise</h2>
+    <p>Tell us more about yourself and start rocking</p>
+   </ng-template>
+    <div class="enterInput">
+        <form action="" class="signUpForm">
+            <ng-container *ngIf="!step; else nextInput">
+            <label>
+                <p>First name</p>
+                <input [(ngModel)]='expertForm.firstName' name="firstName" type="text">
+            </label>
+            <label>
+                <p>Last name</p>
+                <input [(ngModel)]='expertForm.lastName' name="lastName" type="text">
+            </label>
+            <label>
+                <p>Email</p>
+                <input [(ngModel)]='expertForm.email' name="email" type="text">
+            </label>
+            <label>
+                <p>Create password</p>
+                <input [(ngModel)]='expertForm.password' name="password" type="text">
+            </label>
+            <label>
+                <p>Confirm password</p>
+                <input [(ngModel)]='expertForm.confirmPassword' name="confirmPassword" type="text">
+            </label>
+        </ng-container>
+        <ng-template #nextInput>
+            <label>
+                <p>Profession</p>
+                <input [(ngModel)]='expertForm.professionsIds' name="profession" type="text">
+            </label>
+            <label>
+                <p>Professional aspects</p>
+                <input [(ngModel)]='expertForm.professionalAspectsIds' name="aspects" type="text">
+            </label>
+            <div class="choisedAspect"></div>
+            <label>
+                <p>Describe your skills and experience</p>
+                <input [(ngModel)]='expertForm.description' name="description" type="text">
+            </label>
+            <label>
+                <p>Hourly rate</p>
+                <input [(ngModel)]='expertForm.hourlyRate' name="rate" type="text">
+            </label>
+        </ng-template>
+        </form>
+    </div>
+    <button *ngIf="!step"  type="button" (click)='nextStep()'>Next step</button>
+    <button *ngIf="step" (click)='sub()'>Become an expert</button>
+</div>

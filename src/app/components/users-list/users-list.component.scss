@@ -1,0 +1,8 @@
+.users-list{
+    display: flex;
+    flex-wrap: wrap;
+    .user-card{
+        margin-top: 20px;
+        padding: 0px;
+    }
+}
