@@ -29,11 +29,6 @@ export class UsersService implements OnInit {
 getMentorWithId$ = this.apiService.getMentorWithId
 guestUsers$ = this.apiService.getGuestUsers();
 
-  // readonly limit = 8;
-  // readonly activePage$ = new BehaviorSubject(0);
-
-  // users$ = this.getUsers()
-
     constructor(private apiService: ApiService, private _activatedRout: ActivatedRoute) {
     }
     ngOnInit() {  }

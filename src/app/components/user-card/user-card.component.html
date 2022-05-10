@@ -1,10 +1,10 @@
 
 <div [class.mediumCard]='classType' [class.largeCard]='!classType'>
     <div class="user-card">
-        <img src={{user.avatar}} alt="#">
-        <p class="fullName">{{user.firstName}} {{user.lastName}}</p>
-        <p *ngFor="let p of user.professions" class="profession">{{p.profession}}</p>
-        <p class="rate" *ngIf="type === 'large'">Rate: {{user.hourlyRate | number: '1.0-0' | currency }}/h</p>
+            <img src={{user?.avatar}} alt="#">
+        <p class="fullName">{{user?.firstName}} {{user?.lastName}}</p>
+        <p *ngFor="let p of user?.professions" class="profession">{{p.profession}}</p>
+        <p class="rate" *ngIf="type === 'large'">Rate: {{user?.hourlyRate | number: '1.0-0' | currency }}/h</p>
         <div class="star" *ngIf="type !== 'small' ">
             <i class="bi bi-star-fill"></i>
             <i class="bi bi-star-fill"></i>
@@ -15,10 +15,11 @@
         <button buttonStyle *ngIf="type === 'medium' ">
             <a [routerLink]='user.id'>Learn more</a>
         </button>
-        <p class="countReviews" *ngIf="type === 'large'">based on {{user.reviewsCount}} reviews</p>
+        <p class="countReviews" *ngIf="type === 'large'">based on {{user?.reviewsCount}} reviews</p>
         <div class="contactBtn" *ngIf="type === 'large'">
             <button buttonStyle>Contact me</button>
-            <button buttonStyle appFollow (click)="addRemoveUserFavarotes(user.id)" [style.color]="follow ?'grey' : ''"> Follow
+            <button buttonStyle appFollow (click)="addRemoveUserFavarotes(user.id)"> 
+                <span *ngIf="!follow">Follow</span>
                  <i class="bi bi-bookmark-heart-fill"></i>
             </button>
             <button buttonStyle>Liked <i class="bi bi-suit-heart-fill"></i> </button>
@@ -29,19 +30,19 @@
         <div class="userProfile-aspects">
             <h3>Professional aspects</h3>
             <div class="aspects">
-                <ul  *ngFor="let aspects of user.professionalAspects">
+                <ul  *ngFor="let aspects of user?.professionalAspects">
                     <button>{{aspects.aspect}}</button>
                 </ul>
             </div>
         </div>
         <div class="userProfile-description">
             <h3>Profile</h3>
-                <p>{{user.description}}</p>   
+                <p>{{user?.description}}</p>   
         </div>
         <div class="userProfile-reviews">
             <h3>Reviews</h3>
             <div class="reviews">
-                <ul *ngFor="let reviews of user.reviews">
+                <ul *ngFor="let reviews of user?.reviews">
                     <div class="autorReview">
                         <img src={{reviews.authorAvatar}} alt="">
                         <div class="comment">
@@ -58,7 +59,6 @@
                         </div>
                     </div>
                 </ul>
-                <p>See more reviews</p>
             </div>
         </div>
     </div>

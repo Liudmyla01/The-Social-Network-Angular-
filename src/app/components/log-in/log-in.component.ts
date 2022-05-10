@@ -16,11 +16,10 @@ export class LogInComponent implements OnInit {
   }
 
   submitSignIn(){
-    console.log( 'cons from login comp', this.loginName,
-      this.loginPassword);
+    
       this.authService.logIn({email:this.loginName, password:this.loginPassword})
-this.loginName ='';
-this.loginPassword =''
+      this.loginName ='';
+      this.loginPassword =''
   
    }
 }

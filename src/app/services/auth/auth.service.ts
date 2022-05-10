@@ -67,6 +67,7 @@ logOut(){
   tokenAutorization(res:any){
     const token = res.data['jwt-token'];
       this.saveJWT(token);
+      // this.router.navigate(['/profile']);
       window.location.href = 'http://localhost:4200/profile'
   }
 }

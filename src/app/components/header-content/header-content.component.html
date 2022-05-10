@@ -7,21 +7,20 @@
     </div>
     <div class="pages">
         <ul class="list" >
-            <li *ngIf=" user$ | async " id="favorit"><a routerLink="favorites">Favorites</a> </li>
+            <li *ngIf="userAutorize" id="favorit"><a routerLink="favorites">Favorites</a> </li>
             <li routerLink="search" id='search' >Search</li>
             <li id='about'>About us</li>
-            <button id="log" (click)="modal = true && type =='logIn'"><a>Log in</a> </button>
-            <button id="sign"(click)="modal = true && type == 'signUp'"  ><a>Sign up</a> </button>   
+            <button id="log" (click)="login()" *ngIf="!userAutorize"><a>Log in</a> </button>
+            <button id="sign"(click)="signUp()" *ngIf="!userAutorize"><a>Sign up</a> </button>   
+            <button id="profile" *ngIf="userAutorize"><a routerLink="profile"> Profile</a> </button>
+            <button id="sign" (click)="logOut()" *ngIf="userAutorize"><a>Log out</a> </button>
         </ul>
     </div>
 </div>
         <app-modal
-                *ngIf="modal && type === 'logIn'"
+                *ngIf="modal"
                 (close)="modal = false"
-                title="Log in"
+                [type]="type"
+                [title]="title"
         ></app-modal>
-        <app-modal
-        *ngIf="modal && type === 'signUp'"
-        (close)="modal = false"
-        title="Sign up"
-        ></app-modal>
+    

@@ -33,7 +33,7 @@
     #search, #favorit, #about {
         @include font(Roboto, normal, bold, 16px, 19px, $mainColorText);
     }
-    #log {
+    #log,#profile {
         @include size(72px, 32px);
         @include btn(2px, $mainColor, 4px,0,0);
         justify-content: center;
@@ -51,5 +51,14 @@
         a {
             @include font(Inter, normal, bold, 14px, 24px, $light);
         }
+    }
+    #profile{
+        background: url(../../../assets/profileIco.svg);
+        justify-content: start;
+        background-repeat: no-repeat;
+        background-position-x: 64px;
+        background-position-y: 6px;
+        padding-left: 18px;
+        width: 100px;
     }
 }

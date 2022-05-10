@@ -27,6 +27,8 @@
     img {
         @include size(80px,80px);
         border-radius: 100px;
+        object-fit: cover;
+        object-position: top;
     }
     .fullName {
         @include font(Inter,normal,bold,18px,26px,$mainColorText);
@@ -73,11 +75,12 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-        
-        & img {
-            @include size(140px,140px);
-            border-radius: 100px;
-        }
+            img{
+                @include size(80px,80px);
+                object-fit: cover;
+                object-position: top;
+                border-radius: 100px;
+            }
         .fullName{
             @include font(Inter,normal,700,18px,36px,$mainColorText)
         }
@@ -117,14 +120,7 @@
             color: $descripColor;
         }
     }
-    .reviews{
-        padding-right: 51px;
-        & >p{
-            float: right;
-            text-decoration: underline;
-            color: $mainColor;
-        }
-    }
+    
     .autorReview{
         display: flex;
         margin-top: 34px;

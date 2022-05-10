@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/services/auth/auth.service';
 })
 export class ModalComponent implements OnInit {
 
-  @Input() title = 'Default title'
+  @Input() title:string = 'Default title';
   @Input() complete = 'Complete the form to access your account'
   @Input()type: 'logIn' | 'signUp' = 'logIn';
   @Output() close = new EventEmitter<void>()

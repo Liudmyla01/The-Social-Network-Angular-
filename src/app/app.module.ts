@@ -7,7 +7,7 @@ import { UserDescriptionComponent } from './pages/mentor/mentorPage.component';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { PopularComponent } from './pages/home-guest/popular.component';
+import { PopularComponent } from './pages/home/popular.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ButtonStyleDirective } from './directives/button-style.directive';

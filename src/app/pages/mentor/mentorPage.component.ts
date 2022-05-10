@@ -51,8 +51,8 @@ ngOnInit() {
  this.user$ = this._activatedRout.paramMap.pipe(
     map((paramMap:any) =>  paramMap.get('id')),
     switchMap((id) => this.apiSer.getMentorWithId(id))
-    // tap((res) => console.log(res))
   )
+
 }
 
 }

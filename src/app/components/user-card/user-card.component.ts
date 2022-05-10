@@ -25,7 +25,6 @@ follow:boolean = false;
 constructor(readonly _apiServ:ApiService){
 }
 ngOnInit(): void { 
-  //  console.log(this.user);  
  }
  addRemoveUserFavarotes(id:any){
    this.follow = !this.follow

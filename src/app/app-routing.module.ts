@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FavoritesComponent } from './pages/favorites/favorites.component';
 import {  SignUpComponent } from './components/sign-up/sign-up.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { PopularComponent } from './pages/home-guest/popular.component';
+import { PopularComponent } from './pages/home/popular.component';
 import { UserDescriptionComponent } from './pages/mentor/mentorPage.component';
 import { AuthGuard } from './guards/auth/auth.guard';
 import { LogInComponent } from './components/log-in/log-in.component';
